@@ -7,32 +7,32 @@
 
 @layer base {
   :root {
-    /* Professional BlackRock-inspired palette */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
+    /* BlackRock-inspired minimalist palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover-foreground: 0 0% 5%;
 
-    /* Primary: Professional dark blue */
-    --primary: 210 100% 10%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 210 100% 15%;
+    /* Primary: Pure black like BlackRock */
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 0 0% 15%;
 
-    /* Secondary: Elegant gray */
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    /* Secondary: Clean light gray */
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 5%;
 
-    /* Muted: Subtle gray tones */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    /* Muted: Very subtle grays */
+    --muted: 0 0% 98%;
+    --muted-foreground: 0 0% 40%;
 
-    /* Accent: Professional blue */
-    --accent: 210 100% 50%;
-    --accent-foreground: 0 0% 98%;
+    /* Accent: Subtle blue accent */
+    --accent: 210 100% 40%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -43,15 +43,13 @@
 
     --radius: 0.75rem;
 
-    /* Custom gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 8%) 0%, hsl(210 100% 12%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(210 100% 60%) 100%);
+    /* Minimal gradients */
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
     
-    /* Shadows */
-    --shadow-elegant: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
-    --shadow-glow: 0 0 50px hsl(210 100% 50% / 0.3);
-    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    /* Clean shadows */
+    --shadow-soft: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
+    --shadow-medium: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-large: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,51 +1,56 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-bg.jpg";
+import studentPortrait from "@/assets/student-portrait.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-            Miage
-            <span className="bg-gradient-accent bg-clip-text text-transparent ml-4">
-              Forum
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto">
-            L'association étudiante de référence pour les futurs professionnels du numérique et de l'informatique de gestion
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 text-lg font-semibold shadow-glow transition-bounce"
-            >
-              Découvrir nos services
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold transition-smooth backdrop-blur-sm"
-            >
-              Nous rejoindre
-            </Button>
+    <section className="pt-32 pb-20 bg-background">
+      <div className="container mx-auto px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+          {/* Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+                ASSOCIATION ÉTUDIANTE
+              </p>
+              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
+                L'excellence en informatique de gestion commence ici
+              </h1>
+            </div>
+            
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+              Miage Forum accompagne les étudiants vers l'excellence professionnelle 
+              en créant des ponts durables entre formation académique et réussite en entreprise.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 font-semibold"
+              >
+                Découvrir nos services
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="px-8 py-4 font-semibold"
+              >
+                En savoir plus
+              </Button>
+            </div>
+          </div>
+
+          {/* Image */}
+          <div className="relative">
+            <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-large">
+              <img 
+                src={studentPortrait}
+                alt="Étudiant professionnel représentant l'excellence Miage Forum"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
-      
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent"></div>
     </section>
   );
 };

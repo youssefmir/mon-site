@@ -35,15 +35,18 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-32 bg-secondary/30">
+      <div className="container mx-auto px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Nos Services
+          <div className="text-center mb-20">
+            <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">
+              NOS SERVICES
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
+              Un écosystème d'excellence
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Un écosystème complet pour accompagner votre réussite professionnelle
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Des services premium conçus pour transformer votre potentiel en succès professionnel
             </p>
           </div>
 
