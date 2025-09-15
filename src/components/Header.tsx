@@ -6,7 +6,7 @@ const Header = () => {
       <div className="container mx-auto px-8 py-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-foreground tracking-tight">Miage Forum</span>
+            <span className="text-2xl font-bold text-foreground tracking-tight">MIAGE Forum</span>
           </div>
           
           <nav className="hidden lg:flex items-center space-x-12">
