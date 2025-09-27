@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'inter': ['Inter', 'sans-serif'],
+        manrope: ['"Manrope"', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -97,9 +98,13 @@ export default {
         'gradient-accent': 'var(--gradient-accent)',
       },
       boxShadow: {
-        'elegant': 'var(--shadow-elegant)',
-        'glow': 'var(--shadow-glow)',
-        'card': 'var(--shadow-card)',
+        soft: 'var(--shadow-soft)',
+        medium: 'var(--shadow-medium)',
+        large: 'var(--shadow-large)',
+        elevated: 'var(--shadow-elevated)',
+        elegant: 'var(--shadow-soft)',
+        glow: 'var(--shadow-glow)',
+        card: 'var(--shadow-card)',
       },
     },
   },

@@ -1,75 +1,68 @@
+/* OpenAI-inspired clean design system */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* BlackRock-inspired Professional Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @layer base {
   :root {
-    /* BlackRock-inspired minimalist palette */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
+    /* OpenAI-inspired luminous palette */
+    --background: 210 60% 97%;
+    --foreground: 222 47% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card-foreground: 222 47% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover-foreground: 222 47% 10%;
 
-    /* Primary: Pure black like BlackRock */
-    --primary: 0 0% 5%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 0 0% 15%;
+    --primary: 284 21% 17%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 284 21% 22%;
 
-    /* Secondary: Clean light gray */
-    --secondary: 0 0% 97%;
-    --secondary-foreground: 0 0% 5%;
+    --secondary: 210 52% 95%;
+    --secondary-foreground: 222 40% 18%;
 
-    /* Muted: Very subtle grays */
-    --muted: 0 0% 98%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 210 38% 92%;
+    --muted-foreground: 215 16% 45%;
 
-    /* Accent: Subtle blue accent */
-    --accent: 210 100% 40%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 284 28% 36%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 78% 58%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 210 100% 50%;
+    --border: 210 33% 88%;
+    --input: 210 33% 88%;
+    --ring: 284 21% 20%;
 
-    --radius: 0.75rem;
+    --radius: 1.4rem;
 
-    /* Minimal gradients */
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
-    
-    /* Clean shadows */
-    --shadow-soft: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
-    --shadow-medium: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
-    --shadow-large: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+    /* Ethereal gradients */
+    --gradient-base: radial-gradient(circle at 0% 0%, hsl(284 34% 90% / 0.45) 0%, hsl(210 60% 97%) 45%, hsl(210 60% 98%) 100%);
+    --gradient-hero: radial-gradient(circle at 15% 20%, hsl(284 32% 84%) 0%, hsl(260 28% 92%) 45%, hsl(210 60% 98%) 100%);
+    --gradient-card: linear-gradient(160deg, hsl(0 0% 100% / 0.85) 0%, hsl(210 50% 98% / 0.92) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(284 30% 24%) 0%, hsl(284 26% 32%) 100%);
+
+    /* Elevated shadows */
+    --shadow-soft: 0 30px 60px -30px hsl(210 44% 26% / 0.25);
+    --shadow-medium: 0 40px 80px -40px hsl(210 40% 20% / 0.35);
+    --shadow-large: 0 60px 90px -45px hsl(210 40% 15% / 0.35);
+    --shadow-elevated: 0 25px 45px -20px hsl(210 40% 18% / 0.2), 0 15px 35px -15px hsl(210 40% 20% / 0.15);
 
     /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.28s ease;
+    --transition-bounce: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 10%;
+    --sidebar-primary: 284 21% 20%;
+    --sidebar-primary-foreground: 210 40% 96%;
+    --sidebar-accent: 284 30% 94%;
+    --sidebar-accent-foreground: 222 47% 15%;
+    --sidebar-border: 210 33% 88%;
+    --sidebar-ring: 284 21% 20%;
   }
 
   .dark {
@@ -99,15 +92,15 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 284 34% 42%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 284 32% 38%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 284 28% 22%;
+    --sidebar-accent-foreground: 210 40% 96%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 284 34% 42%;
   }
 }
 
@@ -117,15 +110,18 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-manrope antialiased;
+    background-image: var(--gradient-base);
   }
 
-  /* Typography */
+  body, p {
+    @apply tracking-tight;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
   }
 
-  /* Custom utility classes */
   .gradient-hero {
     background: var(--gradient-hero);
   }
@@ -138,16 +134,42 @@
     background: var(--gradient-accent);
   }
 
-  .shadow-elegant {
-    box-shadow: var(--shadow-elegant);
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
   }
 
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-soft);
   }
 
   .shadow-card {
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 25px 60px -35px hsl(284 32% 30% / 0.45);
+  }
+
+  .glass-panel {
+    background: hsl(0 0% 100% / 0.72);
+    backdrop-filter: blur(24px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .section-heading {
+    @apply text-base font-semibold uppercase tracking-[0.3em] text-primary;
   }
 
   .transition-smooth {

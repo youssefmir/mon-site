@@ -1,77 +1,127 @@
+import { useNavigate } from "react-router-dom";
+
+import MiageForumLogo from "@/assets/Miage Forum.svg";
+
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    if (path.startsWith("/#")) {
+      const sectionId = path.replace("/#", "");
+      if (window.location.pathname !== "/") {
+        navigate("/", { state: { scrollTo: sectionId } });
+      } else {
+        const target = document.getElementById(sectionId);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+      return;
+    }
+
+    navigate(path);
+  };
+
   return (
-    <footer className="bg-secondary text-secondary-foreground py-12">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            {/* Logo and description */}
-            <div className="md:col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">MF</span>
-                </div>
-                <span className="text-xl font-semibold text-secondary-foreground">Miage Forum</span>
+    <footer className="relative mt-24 bg-[#050b1a] py-16 text-slate-200">
+      <div className="absolute inset-x-0 -top-10 flex justify-center">
+        <div className="h-16 w-52 rounded-full bg-[linear-gradient(135deg,#5e426d,#312336)] opacity-40 blur-3xl" />
+      </div>
+      <div className="mx-auto max-w-6xl px-6 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
+                <img src={MiageForumLogo} alt="MIAGE Forum" className="h-9 w-auto" />
               </div>
-              <p className="text-secondary-foreground/80 mb-4 max-w-md">
-                L'association étudiante de référence pour les futurs professionnels du numérique 
-                et de l'informatique de gestion.
-              </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-secondary-foreground/60 hover:text-secondary-foreground transition-smooth">
-                  LinkedIn
-                </a>
-                <a href="#" className="text-secondary-foreground/60 hover:text-secondary-foreground transition-smooth">
-                  Instagram
-                </a>
-                <a href="#" className="text-secondary-foreground/60 hover:text-secondary-foreground transition-smooth">
-                  Twitter
-                </a>
-              </div>
+              <span className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">Miage Forum</span>
             </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-semibold text-secondary-foreground mb-4">Liens rapides</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#about" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-smooth">
-                    À propos
-                  </a>
-                </li>
-                <li>
-                  <a href="#services" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-smooth">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#events" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-smooth">
-                    Événements
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-smooth">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h4 className="font-semibold text-secondary-foreground mb-4">Contact</h4>
-              <ul className="space-y-2 text-secondary-foreground/80">
-                <li>contact@miageforum.fr</li>
-                <li>+33 1 23 45 67 89</li>
-                <li>Paris-Dauphine</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center">
-            <p className="text-secondary-foreground/60">
-              © 2024 Miage Forum. Tous droits réservés.
+            <p className="mt-6 max-w-md text-sm text-slate-400">
+              L'association étudiante de référence pour les futurs professionnels du numérique et de l'informatique de gestion.
             </p>
+            <div className="mt-6 flex flex-wrap gap-4 text-sm">
+              <a
+                href="https://www.linkedin.com/company/miage-forum"
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-300 transition-colors hover:text-white"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://www.instagram.com/miageforum"
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-300 transition-colors hover:text-white"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://twitter.com/miageforum"
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-300 transition-colors hover:text-white"
+              >
+                Twitter
+              </a>
+            </div>
           </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-400">Liens rapides</h4>
+            <ul className="mt-6 space-y-3 text-sm text-slate-300">
+              <li>
+                <button type="button" onClick={() => handleNavigate("/#about")} className="transition-colors hover:text-white">
+                  À propos
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleNavigate("/services")} className="transition-colors hover:text-white">
+                  Services
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleNavigate("/evenements")} className="transition-colors hover:text-white">
+                  Événements
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={() => handleNavigate("/contact")} className="transition-colors hover:text-white">
+                  Contact
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-400">Contact</h4>
+            <ul className="mt-6 space-y-3 text-sm text-slate-300">
+              <li>
+                <a href="mailto:contact@miageforum.fr" className="transition-colors hover:text-white">
+                  contact@miageforum.fr
+                </a>
+              </li>
+              <li>
+                <a href="tel:+33123456789" className="transition-colors hover:text-white">
+                  +33 1 23 45 67 89
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/4Y8dXb9EJ1yXmaXW7"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  Paris-Dauphine
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-16 border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+          © 2024 Miage Forum. Tous droits réservés.
         </div>
       </div>
     </footer>
