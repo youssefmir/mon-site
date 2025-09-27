@@ -31,12 +31,8 @@ const Header = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-white/70 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-10">
-        <button
-          onClick={() => navigate('/')}
-          aria-label="Accueil Miage Forum"
-          className="flex h-16 items-center justify-center overflow-visible rounded-full border border-border/60 bg-white/80 px-10 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-medium"
-        >
-          <img src={MiageForumLogo} alt="MIAGE Forum" className="h-full w-auto origin-left scale-[1.7] transform" />
+        <button onClick={() => navigate('/')} aria-label="Accueil Miage Forum" className="flex items-center">
+          <img src={MiageForumLogo} alt="MIAGE Forum" className="h-16 w-auto" />
         </button>
 
         <nav className="hidden items-center gap-10 text-lg font-bold text-muted-foreground/80 lg:flex">
