@@ -1,58 +1,59 @@
-# Welcome to your Lovable project
+# Bienvenue sur le projet Miage Forum
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/bff5b1fe-480e-4e84-8e4b-37669059c0ba
+**URL**: [à compléter]
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bff5b1fe-480e-4e84-8e4b-37669059c0ba) and start prompting.
+**Utiliser Miage Forum**
 
-Changes made via Lovable will be committed automatically to this repo.
+Modifiez le code localement ou via GitHub, puis poussez vos changements sur le dépôt.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Si vous souhaitez travailler localement avec votre IDE, clonez ce dépôt et poussez vos modifications. Les changements seront pris en compte sur Miage Forum.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+La seule exigence est d'avoir Node.js & npm installés - [installer avec nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
+Suivez ces étapes :
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Étape 1 : Cloner le dépôt avec l'URL Git du projet.
+git clone <VOTRE_URL_GIT>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Étape 2 : Aller dans le dossier du projet.
+cd <NOM_DU_PROJET>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Étape 3 : Installer les dépendances nécessaires.
+npm ci
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Étape 4 : Démarrer le serveur de développement avec rechargement automatique.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Modifier un fichier directement sur GitHub**
 
-**Use GitHub Codespaces**
+- Naviguez vers le(s) fichier(s) souhaité(s).
+- Cliquez sur le bouton "Edit" (icône crayon) en haut à droite.
+- Faites vos modifications et validez-les.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
+**Utiliser GitHub Codespaces**
 
-This project is built with:
+- Allez sur la page principale du dépôt.
+- Cliquez sur le bouton "Code" (vert) en haut à droite.
+- Sélectionnez l'onglet "Codespaces".
+- Lancez un nouvel environnement Codespace.
+- Modifiez les fichiers et poussez vos changements.
+
+## Technologies utilisées
+
+Ce projet utilise :
 
 - Vite
 - TypeScript
@@ -60,14 +61,11 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Déploiement
 
-Simply open [Lovable](https://lovable.dev/projects/bff5b1fe-480e-4e84-8e4b-37669059c0ba) and click on Share -> Publish.
+Déployez le projet selon votre workflow habituel (GitHub Pages, Vercel, Netlify, etc.).
 
-## Can I connect a custom domain to my Lovable project?
 
-Yes, you can!
+## Domaines personnalisés
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Vous pouvez connecter un domaine personnalisé selon la plateforme d’hébergement choisie.

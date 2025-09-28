@@ -16,6 +16,7 @@ import Register from "@/pages/Register";
 import Annuaire from "@/pages/Annuaire";
 import WaitingValidation from "@/pages/WaitingValidation";
 import AdminDashboard from "@/pages/AdminDashboard";
+import AlumniPage from "@/pages/AlumniPage";
 import MembersDirectory from "@/pages/services/MembersDirectory";
 import TrainingResources from "@/pages/services/TrainingResources";
 import NetworkingEvents from "@/pages/services/NetworkingEvents";
@@ -31,13 +32,14 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/evenements" element={<EventsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/alumni" element={<AlumniPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/attente-validation" element={<WaitingValidation />} />

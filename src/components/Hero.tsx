@@ -1,68 +1,68 @@
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
-import studentPortrait from "@/assets/student-portrait.jpg";
+import heroBackground from "@/assets/hero-bg.jpg";
+
+const focusRing = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#312336]";
+
+const stats = [
+  { value: "500+", label: "étudiants accompagnés" },
+  { value: "50+", label: "entreprises partenaires" },
+  { value: "15", label: "événements premium / an" },
+];
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative overflow-hidden pt-36 pb-28">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(49,35,54,0.18),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(112,80,124,0.16),transparent_60%)]" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-[480px] bg-gradient-hero" />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f9f8fb]">
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroBackground}
+          alt="Fond abstrait Miage Forum"
+          className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/65 to-white/80 backdrop-blur-[6px]" aria-hidden="true" />
+      </div>
 
-      <div className="mx-auto max-w-6xl px-6 lg:px-10">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-10">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/70 px-4 py-2 text-sm font-medium text-primary shadow-soft">
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              ASSOCIATION ÉTUDIANTE
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center gap-10 px-6 py-32 text-center">
+
+        <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-[#1f1a2a] sm:text-5xl lg:text-[3.4rem] lg:leading-[1.05]">
+          Accélère ta carrière numérique avec une communauté d’excellence
+        </h1>
+
+        <p className="max-w-2xl text-lg text-[#4f4a59] sm:text-xl">
+          Mentorat, opportunités, événements premium : nous connectons étudiants et alumni MIAGE pour créer des trajectoires ambitieuses et durables.
+        </p>
+
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <Button
+            size="lg"
+            className={`${focusRing} rounded-full border-0 bg-[#312336] px-10 py-3 text-base font-semibold text-white shadow-[0_12px_30px_-12px_rgba(49,35,54,0.6)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#463454]`}
+            onClick={() => navigate('/services')}
+          >
+            Découvrir nos services
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className={`${focusRing} rounded-full border-[#312336]/20 bg-white/70 px-10 py-3 text-base font-semibold text-[#312336] shadow-[0_10px_25px_-20px_rgba(49,35,54,0.6)] transition duration-200 hover:-translate-y-0.5 hover:bg-white/90`}
+            onClick={() => navigate('/evenements')}
+          >
+            Voir les événements
+          </Button>
+        </div>
+
+        <div className="mt-6 grid w-full gap-6 text-sm text-[#4f4a59] sm:grid-cols-3">
+          {stats.map((item) => (
+            <div
+              key={item.label}
+              className="rounded-3xl border border-white/60 bg-white/80 px-6 py-5 shadow-[0_24px_45px_-30px_rgba(0,0,0,0.45)] backdrop-blur transition duration-200 hover:-translate-y-1"
+            >
+              <p className="text-2xl font-semibold text-[#312336]">{item.value}</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-[#6f697a]">{item.label}</p>
             </div>
-
-            <h1 className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-[3.6rem] lg:leading-[1.05]">
-              L'excellence en informatique de gestion commence ici
-            </h1>
-
-            <p className="max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Miage Forum accompagne les étudiants vers l'excellence professionnelle en créant des ponts durables entre formation académique et réussite en entreprise.
-            </p>
-
-            <div className="flex flex-col gap-4 pt-2 sm:flex-row">
-              <Button size="lg" className="px-9" onClick={() => navigate('/services')}>
-                Découvrir nos services
-              </Button>
-              <Button variant="outline" size="lg" className="px-9" onClick={() => navigate('/evenements')}>
-                En savoir plus
-              </Button>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-primary" />
-                500+ étudiants accompagnés
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-primary/70" />
-                50+ entreprises partenaires
-              </div>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="absolute -inset-8 -z-10 rounded-[2.4rem] border border-primary/10 bg-gradient-card blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2.4rem] border border-white/60 bg-white/90 p-2 shadow-elevated backdrop-blur-sm">
-              <div className="overflow-hidden rounded-[2rem]">
-                <img
-                  src={studentPortrait}
-                  alt="Étudiant professionnel représentant l'excellence Miage Forum"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/40 bg-white/80 px-4 py-3 text-sm font-medium text-foreground/80 shadow-soft backdrop-blur">
-                Faire rayonner les talents MIAGE
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

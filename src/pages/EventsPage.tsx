@@ -107,7 +107,7 @@ const EventsPage = () => {
       <Header />
       <div className="pb-24 pt-28">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <div className="mb-12 text-center">
+          <div className="relative mb-12 text-center">
             <p className="section-heading">ÉVÉNEMENTS</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
               Les rendez-vous MIAGE Forum

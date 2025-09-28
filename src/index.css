@@ -112,7 +112,27 @@
   body {
     @apply bg-background text-foreground font-manrope antialiased;
     background-image: var(--gradient-base);
+    position: relative;
   }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("./assets/Miage Forum.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: min(95vw, 1280px);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
 
   body, p {
     @apply tracking-tight;
@@ -178,5 +198,24 @@
 
   .transition-bounce {
     transition: var(--transition-bounce);
+  }
+
+  .site-header {
+    height: 64px;
+  }
+
+  .brand {
+    width: 4.75rem;
+    min-width: 4.75rem;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .brand__logo {
+    display: block;
+    height: 100%;
+    width: auto;
+    transform-origin: left center;
+    transform: scale(1.75);
   }
 }

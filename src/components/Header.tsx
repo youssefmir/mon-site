@@ -29,10 +29,14 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-white/70 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-10">
-        <button onClick={() => navigate('/')} aria-label="Accueil Miage Forum" className="flex items-center">
-          <img src={MiageForumLogo} alt="MIAGE Forum" className="h-16 w-auto" />
+    <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-white/70 backdrop-blur-xl">
+      <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-6 py-4 box-border lg:px-10">
+        <button
+          onClick={() => navigate('/')}
+          aria-label="Accueil Miage Forum"
+          className="brand flex h-full items-center"
+        >
+          <img src={MiageForumLogo} alt="MIAGE Forum" className="brand__logo" />
         </button>
 
         <nav className="hidden items-center gap-10 text-lg font-bold text-muted-foreground/80 lg:flex">
@@ -41,6 +45,9 @@ const Header = () => {
           </button>
           <button type="button" onClick={() => handleNavigate('/services')} className="transition-colors hover:text-foreground">
             Services
+          </button>
+          <button type="button" onClick={() => handleNavigate('/alumni')} className="transition-colors hover:text-foreground">
+            Alumni
           </button>
           <button type="button" onClick={() => handleNavigate('/evenements')} className="transition-colors hover:text-foreground">
             Événements
